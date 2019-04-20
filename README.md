@@ -1,6 +1,6 @@
-# Pattern-Based Semantic Relations
+# WordNet Language Model Probing
 
-This repository contains the Pattern-based Semantic Relations (PSR) dataset. Each line of the dataset has the following form (note that all columns are separated by tabs rather than spaces):
+This repository contains the **WordNet Language Model Probing** (WNLaMPro) dataset. Each line of the dataset has the following form (note that all columns are separated by tabs rather than spaces):
 
     <ID>  <SET_TYPE>  <KEY_WORD>  <RELATION>  <TARGET_WORD1>  <TARGET_WORD2>  ...
     
