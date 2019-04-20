@@ -14,7 +14,7 @@ The columns have the following meaning:
 
 ### Annotated Words
 
-Each key and target word of the PSR dataset is represented as an `<ANNOTATED_WORD>` in the following form:
+Each key and target word of the WNLaMPro dataset is represented as an `<ANNOTATED_WORD>` in the following form:
 
     <ANNOTATED_WORD> := <WORD> (<POS>,<FREQ>,<COUNT>)
     
