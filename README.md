@@ -24,3 +24,7 @@ The columns have the following meaning:
 - `<POS>`: The part-of-speech tag for this word (either `n`oun or `a`djective)
 - `<FREQ>`: The estimated Zipf frequency for this word, obtained using [wordfreq](https://pypi.org/project/wordfreq/)
 - `<COUNT>`: The number of occurrences of this word in the [Westbury Wikipedia corpus](http://www.psych.ualberta.ca/~westburylab/downloads/westburylab.wikicorp.download.html)
+
+## Evaluation Script
+
+Documentation for the evaluation script will soon be added.
