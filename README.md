@@ -1,6 +1,6 @@
 # WordNet Language Model Probing
 
-This repository contains the **WordNet Language Model Probing** (WNLaMPro) dataset. Each line of the dataset has the following form (note that all columns are separated by tabs rather than spaces):
+This repository contains the **WordNet Language Model Probing** (WNLaMPro) dataset. Each line of the dataset file (`dataset/WNLaMPro.txt`) has the following form (note that all columns are separated by tabs rather than spaces):
 
     <ID>  <SET_TYPE>  <KEY_WORD>  <RELATION>  <TARGET_WORD1>  <TARGET_WORD2>  ...
     
@@ -27,4 +27,30 @@ The columns have the following meaning:
 
 ## Evaluation Script
 
-Documentation for the evaluation script will soon be added.
+You can evaluate a pretrained language model on WNLaMPro as follows:
+```
+python3 eval-script/evaluate.py --root ROOT --predictions_file PREDICTIONS_FILE --output_file OUTPUT_FILE --model_cls MODEL_CLS --model_name MODEL_NAME (--embeddings EMBEDDINGS)
+```
+where
+- `ROOT` is the path to the directory where `WNLaMPro.txt` can be found;
+- `PREDICTIONS_FILE` is the name of the file in which predictions are to be stored (relative to `ROOT`);
+- `OUTPUT_FILE` is the name of the file in which the model's MRR is to be stored (relative to `ROOT`);
+- `MODEL_CLS` is either `bert` or `roberta` (the evaluation script currently does not support other pretrained language models);
+- `MODEL_NAME` is either the name of a pretrained model from the [Hugging Face Transformers Library](https://github.com/huggingface/transformers) (e.g., `bert-base-uncased`) or the path to a finetuned model;
+- `EMBEDDINGS` (optional) is the path (relative to `ROOT`) of a file that contains embeddings which are used to overwrite the language model's original embeddings. Each line of this file has to be in the format `<WORD> <EMBEDDING>`, for example `apple -0.12 3.45 0.23 ... 0.03`.
+
+For additional parameters, check the content of `eval-script/evaluate.py` or run `python3 eval-script/evaluate.py --help`. 
+
+## Citation
+
+If you make use of the WNLaMPro dataset, please cite the following paper:
+
+```
+@inproceedings{schick2020rare,
+  title={Rare words: A major problem for contextualized representation and how to fix it by attentive mimicking},
+  author={Schick, Timo and Sch{\"u}tze, Hinrich},
+  url="https://arxiv.org/abs/1904.06707",
+  booktitle={Proceedings of the Thirty-Fourth AAAI Conference on Artificial Intelligence},
+  year={2020}
+}
+```
