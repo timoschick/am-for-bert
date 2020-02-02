@@ -247,8 +247,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # file parameters
-    parser.add_argument('--root', type=str, default='C:/Users/Timo/Desktop/bert-experiments/')
-    parser.add_argument('--dataset', type=str, default='eval-dataset.txt')
+    parser.add_argument('--root', type=str, required=True)
+    parser.add_argument('--dataset', type=str, default='WNLaMPro.txt')
     parser.add_argument('--predictions_file', type=str, default=None, required=True)
     parser.add_argument('--output_file', default=None, type=str)
     parser.add_argument('--raw_output_file', default=None, type=str)
